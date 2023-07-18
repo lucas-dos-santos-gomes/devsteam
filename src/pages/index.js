@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Navbar from '@/components/navbar/navbar.jsx';
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
         <title>DevSteam: A sua loja online de games</title>
       </Head>
       <div>
-        DevSteam: A sua loja online de games
+        <Navbar />
       </div>
     </>
   );
