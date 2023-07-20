@@ -32,7 +32,10 @@ export default function Home() {
           </section>
           <section className={styles.session}>
             <Subtitle>Outros jogos</Subtitle>
-            <ul>
+            <ul className={styles.gamecontainer}>
+              <GameCard />
+              <GameCard />
+              <GameCard />
               <GameCard />
             </ul>
           </section>
