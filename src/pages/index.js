@@ -8,6 +8,8 @@ import Subtitle from '@/components/tipography/subtitle/subtitle';
 import SaleCard from '@/components/cards/saleCard/saleCard';
 import GameCard from '@/components/cards/gameCard/gameCard';
 
+import { SALE_GAMES } from '@/constants/database';
+
 export default function Home() {
   return (
     <>
@@ -25,9 +27,9 @@ export default function Home() {
           <section className={styles.session}>
             <Subtitle>Promoções</Subtitle>
             <ul className={styles.salecontainer}>
-              <SaleCard />
-              <SaleCard />
-              <SaleCard />
+              {SALE_GAMES.map(e => {
+                return (<SaleCard name={e.name} percent={e.discount} price={e.price} />);
+              })}
             </ul>
           </section>
           <section className={styles.session}>
