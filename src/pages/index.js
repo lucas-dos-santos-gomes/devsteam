@@ -1,5 +1,7 @@
 import Head from 'next/head';
 
+import styles from '@/styles/index.module.css';
+
 import Navbar from '@/components/navbar/navbar';
 import Container from '@/components/container/container'
 import Subtitle from '@/components/tipography/subtitle/subtitle';
@@ -19,13 +21,15 @@ export default function Home() {
       <div>
         <Navbar />
         <Container>
-          <section>
+          <section className={styles.session}>
             <Subtitle>Promoções</Subtitle>
-            <ul>
+            <ul className={styles.salecontainer}>
+              <SaleCard />
+              <SaleCard />
               <SaleCard />
             </ul>
           </section>
-          <section>
+          <section className={styles.session}>
             <Subtitle>Outros jogos</Subtitle>
           </section>
         </Container>

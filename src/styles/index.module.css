@@ -1,0 +1,10 @@
+.session {
+  margin: 70px 0;
+}
+
+.salecontainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}

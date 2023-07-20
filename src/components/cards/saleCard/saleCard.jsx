@@ -5,7 +5,7 @@ import Button from '@/components/forms/button/button';
 export default function SaleCard() {
   return (
     <li className={styles.salecard}>
-      <Image src="/products/league-of-legends.jpg" width={250} height={300} />
+      <Image src="/products/league-of-legends.jpg" alt="Imagem do jogo Leage Of Legends" width={250} height={300} />
       <div className={styles.info}>
         <h3 className={styles.title}>Oferta exclusiva</h3>
         <div className={styles.pricecard}>
