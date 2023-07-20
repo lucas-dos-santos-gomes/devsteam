@@ -6,6 +6,7 @@ import Navbar from '@/components/navbar/navbar';
 import Container from '@/components/container/container'
 import Subtitle from '@/components/tipography/subtitle/subtitle';
 import SaleCard from '@/components/cards/saleCard/saleCard';
+import GameCard from '@/components/cards/gameCard/gameCard';
 
 export default function Home() {
   return (
@@ -31,6 +32,9 @@ export default function Home() {
           </section>
           <section className={styles.session}>
             <Subtitle>Outros jogos</Subtitle>
+            <ul>
+              <GameCard />
+            </ul>
           </section>
         </Container>
       </div>
