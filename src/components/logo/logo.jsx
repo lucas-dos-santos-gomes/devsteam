@@ -5,7 +5,7 @@ export default function Logo() {
   return (
     <div className={styles.logo}>
       <Image src="/logo.svg" alt="Logo DevSteam" width={50} height={50} />
-      <h1>DevSteam</h1>
+      <h1 className={styles.name}>DevSteam</h1>
     </div>
   );
 }
