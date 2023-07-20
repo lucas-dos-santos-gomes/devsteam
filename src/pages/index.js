@@ -1,7 +1,8 @@
 import Head from 'next/head';
 
 import Navbar from '@/components/navbar/navbar';
-import Subtitle from "@/components/tipography/subtitle/subtitle";
+import Container from '@/components/container/container'
+import Subtitle from '@/components/tipography/subtitle/subtitle';
 
 export default function Home() {
   return (
@@ -16,7 +17,14 @@ export default function Home() {
       </Head>
       <div>
         <Navbar />
-        <Subtitle>Promoções</Subtitle>
+        <Container>
+          <section>
+            <Subtitle>Promoções</Subtitle>
+          </section>
+          <section>
+            <Subtitle>Outros jogos</Subtitle>
+          </section>
+        </Container>
       </div>
     </>
   );
