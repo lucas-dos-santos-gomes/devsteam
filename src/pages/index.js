@@ -1,5 +1,7 @@
 import Head from 'next/head';
-import Navbar from '@/components/navbar/navbar.jsx';
+
+import Navbar from '@/components/navbar/navbar';
+import Subtitle from "@/components/tipography/subtitle/subtitle";
 
 export default function Home() {
   return (
@@ -14,6 +16,7 @@ export default function Home() {
       </Head>
       <div>
         <Navbar />
+        <Subtitle>Promoções</Subtitle>
       </div>
     </>
   );

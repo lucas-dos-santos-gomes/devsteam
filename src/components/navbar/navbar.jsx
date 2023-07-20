@@ -1,6 +1,6 @@
 import { BsCart4 } from 'react-icons/bs';
 import styles from './navbar.module.css';
-import Logo from '../logo/logo';
+import Logo from '@/components/logo/logo';
 
 export default function Navbar() {
   return (
