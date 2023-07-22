@@ -1,3 +1,14 @@
+.cartcontainer {
+  position: relative;
+  padding: 10px 12px;
+  border-radius: 50%;
+  transition: .3s;
+}
+
+.cartcontainer.clicked {
+  background-color: #2B87AE;
+}
+
 .icon {
   cursor: pointer;
 }

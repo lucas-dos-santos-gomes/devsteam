@@ -27,9 +27,7 @@ export default function Home() {
           <section className={styles.session}>
             <Subtitle>Promoções</Subtitle>
             <ul className={styles.salecontainer}>
-              {SALE_GAMES.map(e => {
-                return (<SaleCard name={e.name} percent={e.discount} price={e.price} />);
-              })}
+              {SALE_GAMES.map(e => <SaleCard name={e.name} percent={e.discount} price={e.price} />)}
             </ul>
           </section>
           <section className={styles.session}>
