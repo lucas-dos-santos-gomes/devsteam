@@ -24,3 +24,9 @@ export default function SaleCard({name, percent, price}) {
     </li>
   );
 }
+
+SaleCard.defaultProps = {
+  name: "league-of-legends",
+  percent: 20,
+  price: 99.9
+}
