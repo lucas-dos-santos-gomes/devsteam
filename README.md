@@ -44,4 +44,4 @@ Depois, é só abrir [http://localhost:3000](http://localhost:3000) com o seu na
 Me acompanhe nas redes sociais!
 - [Instagram](https://www.instagram.com/lukinhaxdlc/)
 - [Linkedin](https://www.linkedin.com/in/lucas-santos-gomes)
-- [Facebook](https://www.github.com/lucas-dos-santos-gomes)
+- [GitHub](https://www.github.com/lucas-dos-santos-gomes)
