@@ -1,8 +1,29 @@
 .menu {
   position: absolute;
+  z-index: 10;
+  top: 110%;
   right: 0;
-  bottom: -100%;
   background-color: #364A63;
   width: 350px;
   padding: 20px;
+}
+
+.options {
+  border-bottom: 1px solid #FFF;
+  padding-bottom: 10px;
+}
+
+.options > div:not(.options > div:last-child) {
+  border-bottom: 1px solid #435c7a;
+}
+
+.priceline {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.price {
+  color: #BEEB14;
 }
