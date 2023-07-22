@@ -46,7 +46,7 @@ export default function Home() {
                     price={e.price} 
                     onAdd={() => handleAddProduct({ 
                       name: e.name,
-                      price: e.price, 
+                      price: e.price - (e.price * e.discount / 100), 
                       image: e.name.toLowerCase().replaceAll(" ", "-") + '.jpg'
                     })} 
                   />

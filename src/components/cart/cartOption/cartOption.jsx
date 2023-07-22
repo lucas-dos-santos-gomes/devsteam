@@ -5,7 +5,7 @@ export default function CartOption({ image, title, price, onRemove }) {
   const formattedPrice = price.toFixed(2).replaceAll(".", ",");
   return (
     <div className={styles.option}>
-      <Image src={`/products/${image}`} alt={`Jogo ${title}`} width={62} height={74} />
+      <Image className={styles.image} src={`/products/${image}`} alt={`Jogo ${title}`} width={62} height={74} />
       <div className={styles.info}>
         <h3 className={styles.title}>{title}</h3>
         <h3 className={styles.price}>R${formattedPrice}</h3>

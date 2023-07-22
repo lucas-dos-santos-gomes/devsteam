@@ -11,6 +11,20 @@
 .options {
   border-bottom: 1px solid #FFF;
   padding-bottom: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.options::-webkit-scrollbar {
+  opacity: 0;
+  width: 15px;
+  padding-inline: 2px;
+}
+
+.options::-webkit-scrollbar-thumb {
+  background-color: #293749;
+  border-radius: 50px;
+  border: 5px solid #364A63;
 }
 
 .priceline {

@@ -11,7 +11,11 @@
 }
 
 .option:not(.option:last-child) {
-  border-bottom: 1px solid #435c7a;
+  border-bottom: 1px solid #435C7A;
+}
+
+.image {
+  object-fit: contain;
 }
 
 .info {
