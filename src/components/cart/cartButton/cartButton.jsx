@@ -3,6 +3,6 @@ import styles from './cartButton.module.css';
 
 export default function CartButton() {
   return (
-    <BsCart4 size={40} />
+    <BsCart4 className={styles.icon} size={40} />
   );
 }
