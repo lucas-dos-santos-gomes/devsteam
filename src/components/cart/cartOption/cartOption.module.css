@@ -10,6 +10,10 @@
   padding-top: 0;
 }
 
+.option:not(.option:last-child) {
+  border-bottom: 1px solid #435c7a;
+}
+
 .info {
   display: flex;
   flex-direction: column;

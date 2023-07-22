@@ -13,10 +13,6 @@
   padding-bottom: 10px;
 }
 
-.options > div:not(.options > div:last-child) {
-  border-bottom: 1px solid #435c7a;
-}
-
 .priceline {
   display: flex;
   justify-content: space-between;
