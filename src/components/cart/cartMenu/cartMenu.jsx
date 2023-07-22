@@ -1,5 +1,6 @@
 import styles from './cartMenu.module.css';
 import CartOption from '../cartOption/cartOption';
+import Button from '@/components/forms/button/button';
 
 export default function CartMenu() {
   return (
@@ -13,6 +14,7 @@ export default function CartMenu() {
         <h2>Total:</h2>
         <h2 className={styles.price}>R$ 99,90</h2>
       </div>
+      <Button fullWidth>Finalizar compra</Button>
     </div>
   );
 }
