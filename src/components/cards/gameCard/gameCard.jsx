@@ -2,7 +2,8 @@ import Image from 'next/image';
 import styles from './gameCard.module.css';
 import Button from '@/components/forms/button/button';
 
-export default function GameCard({ name, src, categories, price }) {
+export default function GameCard({ onAdd, ...props }) {
+  const { name, src, categories, price } = {...props};
   const getCategories = categories.join(", ");
   const formattedPrice = `R$ ${price.toFixed(2).replaceAll(".", ",")}`;
   return (
@@ -14,7 +15,7 @@ export default function GameCard({ name, src, categories, price }) {
         <div className={styles.pricing}>
           <h2 className={styles.price}>{formattedPrice}</h2>
           <div className={styles.buttoncontainer}>
-            <Button fullWidth>Adicionar ao carrinho</Button>
+            <Button onClick={onAdd} fullWidth>Adicionar ao carrinho</Button>
           </div>
         </div>
       </div>

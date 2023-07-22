@@ -28,5 +28,10 @@
     .search {
       min-width: 200px;
     }
+    @media(max-width: 370px) {
+      .search {
+        min-width: 150px;
+      }
+    }
   }
 }

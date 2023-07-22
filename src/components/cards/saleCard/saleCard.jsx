@@ -2,7 +2,7 @@ import Image from 'next/image';
 import styles from './saleCard.module.css';
 import Button from '@/components/forms/button/button';
 
-export default function SaleCard({name, percent, price}) {
+export default function SaleCard({name, percent, price, onAdd}) {
   const src = name.toLowerCase().replaceAll(" ", "-");
   const formattedPrice = price.toFixed(2).replaceAll(".", ",");
   const formattedFinalPrice = (price - (price * percent / 100)).toFixed(2).replaceAll(".", ",");
@@ -19,7 +19,7 @@ export default function SaleCard({name, percent, price}) {
             <h4 className={styles.discountprice}>R${formattedFinalPrice}</h4>
           </div>
         </div>
-        <Button fullWidth>Adicionar ao carrinho</Button>
+        <Button onClick={onAdd} fullWidth>Adicionar ao carrinho</Button>
       </div>
     </li>
   );

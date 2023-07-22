@@ -24,3 +24,13 @@
 .price {
   color: #BEEB14;
 }
+
+.emptycart {
+  text-align: center;
+}
+
+@media(max-width: 400px) {
+  .menu {
+    width: 85vw;
+  }
+}
