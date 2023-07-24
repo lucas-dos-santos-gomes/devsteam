@@ -2,6 +2,7 @@
   position: relative;
   padding: 10px 12px;
   border-radius: 50%;
+  cursor: pointer;
   transition: .3s;
 }
 
@@ -9,6 +10,16 @@
   background-color: #2B87AE;
 }
 
-.icon {
-  cursor: pointer;
+.number {
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  display: grid;
+  place-items: center;
+  width: 23px;
+  height: 23px;
+  border-radius: 50px;
+  font-weight: 700;
+  background-color: #FFF;
+  color: #000;
 }
