@@ -1,5 +1,7 @@
-import { useState } from 'react';
 import Head from 'next/head';
+import { useRecoilState } from 'recoil';
+
+import { cartState } from '@/atoms/cart';
 
 import styles from '@/styles/index.module.css';
 
@@ -12,7 +14,7 @@ import GameCard from '@/components/cards/gameCard/gameCard';
 import { SALE_GAMES } from '@/constants/database';
 
 export default function Home() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useRecoilState(cartState);
 
   const handleAddProduct = (info) => {
     setCart([...cart, info]);
@@ -33,7 +35,7 @@ export default function Home() {
         <title>DevSteam: A sua loja online de games</title>
       </Head>
       <div>
-        <Navbar cart={cart} onRemove={handleRemoveProduct} />
+        <Navbar onRemove={handleRemoveProduct} />
         <Container>
           <section className={styles.session}>
             <Subtitle>Promoções</Subtitle>
