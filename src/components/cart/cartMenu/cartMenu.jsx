@@ -1,8 +1,16 @@
+import { useRecoilState } from 'recoil';
+import { cartState } from '@/atoms/cart';
 import styles from './cartMenu.module.css';
 import CartOption from '../cartOption/cartOption';
 import Button from '@/components/forms/button/button';
 
-export default function CartMenu({ cart, onRemove }) {
+export default function CartMenu() {
+  const [cart, setCart] = useRecoilState(cartState);
+
+  const handleRemoveProduct = (index) => {
+    setCart(cart.filter((item, indexItem) => indexItem !== index));
+  }
+
   return (
     <div className={styles.menu}>
       {
@@ -10,7 +18,13 @@ export default function CartMenu({ cart, onRemove }) {
           <div>
             <div className={styles.options}>
               {cart.map(({ image, name, price }, pos) => 
-                <CartOption image={image} title={name} price={price} onRemove={() => onRemove(pos)} key={`cart-info-${pos}`} />
+                <CartOption 
+                  image={image} 
+                  title={name} 
+                  price={price} 
+                  onRemove={() => handleRemoveProduct(pos)} 
+                  key={`cart-info-${pos}`} 
+                />
               )}
             </div>
             <div className={styles.priceline}>

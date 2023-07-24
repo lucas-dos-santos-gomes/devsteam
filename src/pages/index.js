@@ -20,10 +20,6 @@ export default function Home() {
     setCart([...cart, info]);
   }
 
-  const handleRemoveProduct = (index) => {
-    setCart(cart.filter((item, indexItem) => indexItem !== index));
-  }
-
   return (
     <>
       <Head>
@@ -35,7 +31,7 @@ export default function Home() {
         <title>DevSteam: A sua loja online de games</title>
       </Head>
       <div>
-        <Navbar onRemove={handleRemoveProduct} />
+        <Navbar />
         <Container>
           <section className={styles.session}>
             <Subtitle>Promoções</Subtitle>
