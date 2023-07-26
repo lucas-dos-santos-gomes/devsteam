@@ -1,12 +1,12 @@
-import { useState } from 'react';
 import { BsCart4 } from 'react-icons/bs';
-import { useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { openState } from '@/atoms/open';
 import { cartState } from '@/atoms/cart';
 import styles from './cartButton.module.css';
 import CartMenu from '@/components/cart/cartMenu/cartMenu';
 
 export default function CartButton() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useRecoilState(openState);
   const cart = useRecoilValue(cartState);
   return (
     <div className={`${styles.cartcontainer} ${open && styles.clicked}`}>
