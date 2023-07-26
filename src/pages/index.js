@@ -65,7 +65,7 @@ export default function Home() {
                     onAdd={() => handleAddProduct({ 
                       name: e.name,
                       price: e.price, 
-                      image: e.src
+                      image: "cover-" + e.src
                     })} 
                   />
                 );
