@@ -11,7 +11,7 @@ import Subtitle from '@/components/tipography/subtitle/subtitle';
 import SaleCard from '@/components/cards/saleCard/saleCard';
 import GameCard from '@/components/cards/gameCard/gameCard';
 
-import { SALE_GAMES } from '@/constants/database';
+import { saleGames, otherGames } from '@/datas/games';
 
 export default function Home() {
   const [cart, setCart] = useRecoilState(cartState);
@@ -36,7 +36,7 @@ export default function Home() {
           <section className={styles.session}>
             <Subtitle>Promoções</Subtitle>
             <ul className={styles.salecontainer}>
-              {SALE_GAMES.map(e => {
+              {saleGames.map(e => {
                 return (
                   <SaleCard 
                     name={e.name} 
@@ -55,10 +55,21 @@ export default function Home() {
           <section className={styles.session}>
             <Subtitle>Outros jogos</Subtitle>
             <ul className={styles.gamecontainer}>
-              <GameCard onAdd={() => handleAddProduct({ name: "Counter Strike: Global Offensive", price: 76.49, image: "counter-strike.jpg"})} />
-              <GameCard onAdd={() => handleAddProduct({ name: "Counter Strike: Global Offensive", price: 76.49, image: "counter-strike.jpg"})} />
-              <GameCard onAdd={() => handleAddProduct({ name: "Counter Strike: Global Offensive", price: 76.49, image: "counter-strike.jpg"})} />
-              <GameCard onAdd={() => handleAddProduct({ name: "Counter Strike: Global Offensive", price: 76.49, image: "counter-strike.jpg"})} />
+              {otherGames.map(e => {
+                return (
+                  <GameCard 
+                    name={e.name} 
+                    src={e.src} 
+                    categories={e.categories}
+                    price={e.price} 
+                    onAdd={() => handleAddProduct({ 
+                      name: e.name,
+                      price: e.price, 
+                      image: e.src
+                    })} 
+                  />
+                );
+              })}
             </ul>
           </section>
         </Container>
