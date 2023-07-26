@@ -43,5 +43,15 @@ export const otherGames = [
       "tiro" 
     ],
     price: 109.89
+  }, {
+    name: "Forza horizon 5",
+    src: "forza-horizon-5.jpg",
+    categories: [
+      "Arcade",
+      "Corrida",
+      "Direção",
+      "Simulação"
+    ],
+    price: 249
   }
 ]
