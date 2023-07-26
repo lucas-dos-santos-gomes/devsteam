@@ -28,10 +28,20 @@ export const otherGames = [
     name: "Outlast",
     src: "outlast.jpg",
     categories: [
-      "terror",
+      "furtivo",
       "primeira pessoa",
-      "furtivo"
+      "terror"
     ],
     price: 59.99
+  }, {
+    name: "Grand Theft Auto V",
+    src: "gta-v.jpg",
+    categories: [
+      "ação",
+      "crime",
+      "mundo aberto",
+      "tiro" 
+    ],
+    price: 109.89
   }
 ]
