@@ -1,7 +1,8 @@
 import Head from 'next/head';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 
 import { cartState } from '@/atoms/cart';
+import { searchState } from '@/atoms/search';
 
 import styles from '@/styles/index.module.css';
 
@@ -15,9 +16,31 @@ import { saleGames, otherGames } from '@/datas/games';
 
 export default function Home() {
   const [cart, setCart] = useRecoilState(cartState);
+  const search = useRecoilValue(searchState);
 
   const handleAddProduct = (info) => {
     (cart.some(e => e.name === info.name)) || setCart([...cart, info]);
+  }
+
+  const filterSaleGames = () => {
+    const filterGames = saleGames.filter(e => e.name.toLowerCase().includes(search.toLowerCase()));
+    return (
+      filterGames.map(e => {
+        console.log(e.name);
+        return (
+          <SaleCard 
+            name={e.name} 
+            percent={e.discount} 
+            price={e.price} 
+            onAdd={() => handleAddProduct({ 
+              name: e.name,
+              price: e.price - (e.price * e.discount / 100), 
+              image: e.name.toLowerCase().replaceAll(" ", "-") + '.jpg'
+            })} 
+          />
+        );
+      })
+    );
   }
 
   return (
@@ -36,7 +59,7 @@ export default function Home() {
           <section className={styles.session}>
             <Subtitle>Promoções</Subtitle>
             <ul className={styles.salecontainer}>
-              {saleGames.map(e => {
+              {(search.length === 0) && saleGames.map(e => {
                 return (
                   <SaleCard 
                     name={e.name} 
@@ -50,6 +73,7 @@ export default function Home() {
                   />
                 );
               })}
+              {(search.length === 0 || filterSaleGames())}
             </ul>
           </section>
           <section className={styles.session}>
