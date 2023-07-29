@@ -3,10 +3,10 @@
 }
 
 .salecontainer {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
   justify-content: space-between;
   gap: 20px;
-  flex-wrap: wrap;
   margin-top: 20px;
 }
 
@@ -19,6 +19,9 @@
 
 @media(max-width: 885px) {
   .salecontainer {
+    grid-template-columns: none;
+    display: flex;
     justify-content: center;
+    flex-wrap: wrap;
   }
 }
