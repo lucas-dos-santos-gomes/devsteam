@@ -24,6 +24,7 @@ export default function Home() {
 
   const filterSaleGames = () => {
     const filterGames = saleGames.filter(e => e.name.toLowerCase().includes(search.toLowerCase()));
+    if(filterGames.length === 0) return (<p>Jogo não encontrado</p>);
     return (
       filterGames.map(e => {
         console.log(e.name);
@@ -36,6 +37,29 @@ export default function Home() {
               name: e.name,
               price: e.price - (e.price * e.discount / 100), 
               image: e.name.toLowerCase().replaceAll(" ", "-") + '.jpg'
+            })} 
+          />
+        );
+      })
+    );
+  }
+
+  const filterOtherGames = () => {
+    const filterGames = otherGames.filter(e => e.name.toLowerCase().includes(search.toLowerCase()));
+    if(filterGames.length === 0) return (<p>Jogo não encontrado</p>);
+    return (
+      filterGames.map(e => {
+        console.log(e.name);
+        return (
+          <GameCard 
+            name={e.name} 
+            src={e.src} 
+            categories={e.categories}
+            price={e.price} 
+            onAdd={() => handleAddProduct({ 
+              name: e.name,
+              price: e.price, 
+              image: "cover-" + e.src
             })} 
           />
         );
@@ -79,7 +103,7 @@ export default function Home() {
           <section className={styles.session}>
             <Subtitle>Outros jogos</Subtitle>
             <ul className={styles.gamecontainer}>
-              {otherGames.map(e => {
+              {(search.length === 0) && otherGames.map(e => {
                 return (
                   <GameCard 
                     name={e.name} 
@@ -94,6 +118,7 @@ export default function Home() {
                   />
                 );
               })}
+              {(search.length === 0 || filterOtherGames())}
             </ul>
           </section>
         </Container>
