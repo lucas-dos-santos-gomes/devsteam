@@ -1,4 +1,3 @@
-import { BsCart4 } from 'react-icons/bs';
 import styles from './navbar.module.css';
 import Logo from '@/components/logo/logo';
 import Input from '@/components/forms/input/input';

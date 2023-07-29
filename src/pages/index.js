@@ -17,7 +17,7 @@ export default function Home() {
   const [cart, setCart] = useRecoilState(cartState);
 
   const handleAddProduct = (info) => {
-    cart.filter(e => e.name === info.name).length === 0 && setCart([...cart, info]);
+    (cart.some(e => e.name === info.name)) || setCart([...cart, info]);
   }
 
   return (
