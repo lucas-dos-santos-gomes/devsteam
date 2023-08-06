@@ -1,17 +1,31 @@
+import { useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { cartState } from '@/atoms/cart';
 import { openCartState } from '@/atoms/openCart';
-import styles from './cartMenu.module.css';
+
 import CartOption from '../cartOption/cartOption';
+
+import styles from './cartMenu.module.css';
+
 import Button from '@/components/forms/button/button';
+import Checkout from '@/components/modal/checkout';
 
 export default function CartMenu() {
   const [cart, setCart] = useRecoilState(cartState);
   const [openCart, setOpenCart] = useRecoilState(openCartState);
+  const [openCheckout, setOpenCheckout] = useState(false);
+
+  const price = cart.reduce((prev, current) => prev + current.price, 0).toFixed(2).replace(".", ",");
 
   const handleRemoveProduct = (index) => {
     setCart(cart.filter((item, indexItem) => indexItem !== index));
     cart.length === 1 && setOpenCart(!openCart);
+  }
+
+  const handleCloseModal = () => {
+    setOpenCheckout(false);
+    setOpenCart(false);
+    setCart([]);
   }
 
   return (
@@ -31,11 +45,18 @@ export default function CartMenu() {
           </div>
           <div className={styles.priceline}>
             <h2>Total:</h2>
-            <h2 className={styles.price}>R$ {cart.reduce((prev, current) => prev + current.price, 0).toFixed(2).replace(".", ",")}</h2>
+            <h2 className={styles.price}>
+              R$ {price}
+            </h2>
           </div>
-          <Button fullWidth>Finalizar compra</Button>
+          <Button onClick={() => setOpenCheckout(true)} fullWidth>Finalizar compra</Button>
         </div>
       )}
+      <Checkout 
+        price={price} 
+        open={openCheckout} 
+        closeModal={handleCloseModal} 
+      />
     </div>
   );
 }

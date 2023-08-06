@@ -12,7 +12,6 @@ import Container from '@/components/container/container'
 import Subtitle from '@/components/tipography/subtitle/subtitle';
 import SaleCard from '@/components/cards/saleCard/saleCard';
 import GameCard from '@/components/cards/gameCard/gameCard';
-import Checkout from '@/components/modal/checkout';
 
 import { saleGames, otherGames } from '@/constants/games';
 
@@ -125,7 +124,6 @@ export default function Home() {
             </ul>
           </section>
         </Container>
-        <Checkout />
       </div>
     </>
   );

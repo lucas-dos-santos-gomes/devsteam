@@ -5,23 +5,14 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import { useRecoilState } from 'recoil';
-
-import { openCheckoutState } from '@/atoms/openCheckout';
 
 import styles from './checkout.module.css';
 
-export default function Checkout() {
-  const [openCheckout, setOpenCheckout] = useRecoilState(openCheckoutState);
-
-  const handleCloseModal = () => {
-    setOpenCheckout(false);
-  };
-
+export default function Checkout({ price, open, closeModal }) {
   return (
     <Dialog
-      open={openCheckout}
-      onClose={handleCloseModal}
+      open={open}
+      onClose={closeModal}
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
     >
@@ -31,11 +22,11 @@ export default function Checkout() {
       </DialogTitle>
       <DialogContent>
         <DialogContentText id="alert-dialog-description">
-          Sua compra foi efetuada com sucesso!
+          Sua compra no valor de R${price} foi efetuada com sucesso!
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleCloseModal} autoFocus>Fechar</Button>
+        <Button onClick={closeModal} autoFocus>Fechar</Button>
       </DialogActions>
     </Dialog>
   );
