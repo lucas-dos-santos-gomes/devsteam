@@ -3,7 +3,7 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 
 import { cartState } from '@/atoms/cart';
 import { searchState } from '@/atoms/search';
-import { openState } from '@/atoms/open';
+import { openCartState } from '@/atoms/openCart';
 
 import styles from '@/styles/index.module.css';
 
@@ -19,7 +19,7 @@ import { saleGames, otherGames } from '@/constants/games';
 export default function Home() {
   const [cart, setCart] = useRecoilState(cartState);
   const search = useRecoilValue(searchState);
-  const open = useRecoilValue(openState);
+  const openCart = useRecoilValue(openCartState);
 
   const handleAddProduct = (info) => {
     (cart.some(e => e.name === info.name)) || setCart([...cart, info]);
@@ -82,7 +82,7 @@ export default function Home() {
       </Head>
       <div>
         <Navbar />
-        <Container cartOpen={open}>
+        <Container cartOpenCart={openCart}>
           <section className={styles.session}>
             <Subtitle>Promoções</Subtitle>
             <ul className={styles.salecontainer}>

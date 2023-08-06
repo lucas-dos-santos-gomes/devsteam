@@ -1,17 +1,17 @@
 import { useRecoilState } from 'recoil';
 import { cartState } from '@/atoms/cart';
-import { openState } from '@/atoms/open';
+import { openCartState } from '@/atoms/openCart';
 import styles from './cartMenu.module.css';
 import CartOption from '../cartOption/cartOption';
 import Button from '@/components/forms/button/button';
 
 export default function CartMenu() {
   const [cart, setCart] = useRecoilState(cartState);
-  const [open, setOpen] = useRecoilState(openState);
+  const [openCart, setOpenCart] = useRecoilState(openCartState);
 
   const handleRemoveProduct = (index) => {
     setCart(cart.filter((item, indexItem) => indexItem !== index));
-    cart.length === 1 && setOpen(!open);
+    cart.length === 1 && setOpenCart(!openCart);
   }
 
   return (
