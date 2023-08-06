@@ -6,8 +6,14 @@ Projeto de Front-End de um E-commerce de jogos baseado na Steam contruído em Re
 
 ## Tecnologias
 
-- NextJs na sua versão 13.4.1
-- ReactJs na versão 18.2.0
+- Next.js na sua versão 13.4.1
+- React.js na versão 18.2.0
+
+- React Icons na sua versão 4.8.0
+- Recoil na sua versão 0.7.7
+
+- Material UI na sua versão 5.14.3
+- Styled Components na sua versão 5.3.11
 
 ## Ideias futuras
 
